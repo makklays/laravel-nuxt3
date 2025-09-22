@@ -6,7 +6,6 @@ This is a <b>Laravel + Nuxt 3</b> project with sample code to demonstrate my kno
 
 <p align="left">
     <img src="./backend/public/images/screen15.png" />
-    <img src="./backend/public/images/screen12.png" />
     <img src="./backend/public/images/screen11.png" />
 </p>
 
