@@ -1,27 +1,12 @@
 <style>
-.my-input {
-    border:none; color:#132760;
-}
-.my-label {
-    font-weight:bold;
-    color:#13275F;
-    margin-right:10px;
-}
-.my-input-interests {
-    margin-right:10px;
-}
-.my-lbl-interests {
-    margin-right:60px;
-    color:#132760;
-}
-.my-text-red {
-    color: red;
-    font-size: 12px;
-    margin-left: 100px;
-}
-.btn-green {
-    width:100px; color:#FFF; background-color:#90B53F; border-radius:0px;
-}
+.my-input { border:none; color:#132760; }
+.my-label { font-weight:bold; color:#13275F; margin-right:10px; }
+.my-label2 { font-weight:bold; color:#13275F; margin-top:15px; }
+.my-email { color:#13275F; text-decoration:none; }
+.my-input-interests { margin-right:10px; }
+.my-lbl-interests { margin-right:60px; color:#132760; }
+.my-text-red { color: red; font-size: 12px; margin-left: 100px; }
+.btn-green { width:100px; color:#FFF; background-color:#90B53F; border-radius:0px; }
 .center-div {
     display: flex;
     font-weight: bold;
@@ -61,12 +46,10 @@ input[type="checkbox"] {
     cursor: pointer;
     position: relative;
 }
-
 /* При включении галочки */
 input[type="checkbox"]:checked {
     //background-color: #13275F; /* цвет заполнения при чекнутом */
 }
-
 /* Галочка через псевдоэлемент */
 input[type="checkbox"]:checked::after {
     //content: '✔';
@@ -93,28 +76,33 @@ input[type="text"]:focus {
     box-shadow: none;
     border-bottom: 1px solid #DBDCDD;
 }
-
 .col:focus-within label {
     color: #D77431; /* новый цвет label при фокусе input */
+}
+.my-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #13275F;
+    margin-right: 10px;
 }
 </style>
 
 <template>
     <div class="row m-0">
-        <div class="col-md-12" style="margin:30px 0; border:1px solid #DBDCDD;">
+        <div class="col-md-12" style="margin:30px 0;">
             <div v-if="pending">Загрузка...</div>
             <div v-else-if="error">Ошибка: {{ error.message }}</div>
             <div v-else>
                 <div class="row">
-                    <div class="col-md-1 center-div" style="background-color:#132760; color:#FFF;">
+                    <div class="col-md-1 ps-3 center-div" style="background-color:#132760; color:#FFF; border-top:1px solid #DBDCDD; border-left:1px solid #DBDCDD; border-bottom:1px solid #DBDCDD;">
                         <div>Test R</div>
                     </div>
-                    <div class="col-md-1 center-div2">
+                    <div class="col-md-1 center-div2" style="border-top:1px solid #DBDCDD; border-bottom:1px solid #DBDCDD;">
                         <div class="circle">
                             <i class="bi bi-camera"></i>
                         </div>
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-10" style="border-top:1px solid #DBDCDD; border-right:1px solid #DBDCDD; border-bottom:1px solid #DBDCDD;">
                         <form @submit.prevent="submitForm" class="max-w-md mx-auto">
                             <div class="row my-4">
                                 <div class="col">
@@ -243,8 +231,28 @@ input[type="text"]:focus {
                     </div>
                 </div>
             </div>
-
         </div>
+
+        <div class="d-flex p-0" style="gap:25px; margin:0;">
+            <div style="flex:0 0 16.666%; padding:25px 15px; border:1px solid #DBDCDD;">
+                <div>
+                    <div class="my-title">Auth data</div>
+
+                    <div class="my-label2">Password</div>
+                    <div style="font-size:14px; color:#666666;" >change password</div>
+
+                    <div class="my-label2">Email</div>
+                    <a :href="`mailto:${profile?.email}`" class="my-email">{{ profile?.email }}</a>
+                    <div style="font-size:14px; color:#666666;">change password</div>
+                </div>
+            </div>
+            <div style="flex:1; padding:25px 15px; border:1px solid #DBDCDD;">
+                <div>
+                    <div class="my-title">Messages</div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -275,7 +283,7 @@ pending.value = true
 error.value = null
 
 try {
-        const { data } = await useFetch(`http://localhost:8000/api/profiles/${id}`)
+        const { data } = await useFetch(`http://localhost:8000/api/profile/${id}`)
         profile.value = data.value
         if (profile.value) {
             country.value = profile.value.country || ''
@@ -331,7 +339,7 @@ async function submitForm() {
     formErrors.value = {} // очищаем предыдущие ошибки
 
     try {
-        const response = await fetch(`http://localhost:8000/api/profiles/${route.params.id}`, {
+        const response = await fetch(`http://localhost:8000/api/profile/${route.params.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

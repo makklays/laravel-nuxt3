@@ -19,7 +19,7 @@ use App\Http\Controllers\ApiController;
     return $request->user();
 });*/
 
-Route::get('/profiles/{id}', [ApiController::class, 'get_user_profile_one'])->whereNumber('id');
-Route::put('/profiles/{id}', [ApiController::class, 'put_user_profile_one'])->whereNumber('id');
+Route::get('/profile/{id}', [ApiController::class, 'get_user_profile_one'])->whereNumber('id');
+Route::put('/profile/{id}', [ApiController::class, 'put_user_profile_one'])->whereNumber('id');
 
 Route::get('/hello', fn() => ['message' => 'Hola desde Laravel API']);

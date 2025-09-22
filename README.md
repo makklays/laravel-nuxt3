@@ -5,7 +5,7 @@ This is a <b>Laravel + Nuxt 3</b> project with sample code to demonstrate my kno
 ### Frontend (Nuxt 3)
 
 <p align="left">
-    <img src="./backend/public/images/screen1.png" />
+    <img src="./backend/public/images/screen13.png" />
     <img src="./backend/public/images/screen12.png" />
     <img src="./backend/public/images/screen11.png" />
 </p>
