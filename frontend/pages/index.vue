@@ -9,7 +9,7 @@
 // Указываем layout для страницы
 definePageMeta({ layout: 'default' })
 
-const { data } = await useFetch('http://localhost:8002/api/hello')
+const { data } = await useFetch('http://localhost:8000/api/hello')
 const message = data.value.message
 </script>
 

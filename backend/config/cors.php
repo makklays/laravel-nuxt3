@@ -2,11 +2,12 @@
 
 return [
     'paths' => ['api/*'],
-    'allowed_methods' => ['*'],
-    'allowed_origins' => ['http://localhost:3009'], // порт Nuxt
+
+    'allowed_methods' => ['*'], // разрешаем все методы (GET, POST, PUT...)
+    'allowed_origins' => ['*'], // фронтенд
     'allowed_headers' => ['*'],
     'exposed_headers' => [],
     'max_age' => 0,
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 ];
 
