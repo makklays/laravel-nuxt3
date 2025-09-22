@@ -22,7 +22,7 @@ class UserProfile extends Model
         'phones' => 'array', // json: масив телефонів, nullable
         'mobile', // string, nullable
         'home', // string, nullable
-        'id_photo', // boolean
+        'id_photo' => 'boolean', // boolean
         'interests' => 'array', // json: масив обраних інтересів, nullable
         'email',
         'password', // bcrypt-хеш

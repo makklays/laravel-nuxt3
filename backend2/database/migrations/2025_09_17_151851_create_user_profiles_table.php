@@ -16,13 +16,13 @@ return new class extends Migration
             $table->string('address', '255');
             $table->string('postcode', '255');
             $table->string('id_code', '255');
-            $table->date('birthday')->nullable()->default(null);
+            $table->date('birthday')->nullable();
             $table->string('facebook', '255')->nullable();
             $table->string('linkedin', '255')->nullable();
             $table->json('phones')->nullable(); // json
             $table->string('mobile', '255')->nullable();
             $table->string('home', '255')->nullable();
-            $table->integer('id_photo')->nullable();
+            $table->boolean('id_photo')->default(0);
             $table->json('interests')->nullable(); // json
             $table->string('email', '255');
             $table->string('password', '255')->nullable();

@@ -185,8 +185,11 @@ input[type="text"]:focus {
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label for="id_photo" class="w-20 text-right my-label" >ID Photo</label>
-                                    <input id="id_photo" type="text" v-model="id_photo" placeholder="need to add" class="no-border px-3 py-2 flex-1 my-input" />
+                                    <div class="d-flex align-items-center">
+                                        <label for="id_photo" class="w-20 text-right my-label mb-0">ID Photo</label>
+                                        <i v-if="id_photo" class="bi bi-check-lg text-success ms-2" style="font-size: 24px;"></i>
+                                        <i v-else class="bi bi-x-lg text-danger ms-2" style="font-size: 24px;"></i>
+                                    </div>
                                     <div v-if="formErrors.id_photo" class="my-text-red">
                                         <div v-for="(err, idx) in formErrors.id_photo" :key="idx">{{ err }}</div>
                                     </div>

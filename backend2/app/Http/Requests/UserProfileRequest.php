@@ -19,7 +19,7 @@ class UserProfileRequest extends FormRequest
             'postcode' => 'required|string|max:255',
             'id_code' => 'required|string|max:255',
             'birthday' => 'required',
-            'id_photo' => 'required',
+            //'id_photo' => 'required',
             'interests' => 'required',
         ];
     }

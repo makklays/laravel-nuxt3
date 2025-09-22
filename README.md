@@ -6,6 +6,8 @@ Frontend (Nuxt 3)
 
 <p align="left">
     <img src="./backend2/public/images/screen1.png" />
+    <img src="./backend2/public/images/screen12.png" />
+    <img src="./backend2/public/images/screen11.png" />
 </p>
 
 Backend (Laravel with methods GET, PUT)

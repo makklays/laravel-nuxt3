@@ -22,8 +22,18 @@ class ApiController
         }
     }
 
-    // put method
+    // put method - edit user_profile
     public function put_user_profile_one(UserProfileRequest $request, $id) {
+        /* можно добавить bearer token или jwt - вынести его в middleware и использовать api.php и т.д..
+        // не реализовывалась по тз тестового задания
+        $bearer = $request->bearerToken();
+        if (!$token) {
+            return response()->json(['message' => 'Unauthorized: Token missing'], 401);
+        }*/
+
+        // если загрузили фото - загрузка фото не реализовывалась по тз тестового задания
+        $id_photo = true;
+
         if ($id) {
             $update = UserProfile::where(['id' => $id])->update([
                 'country' => request()->get('country'),
@@ -36,9 +46,8 @@ class ApiController
                 'phones' => request()->get('phones') ?? null,
                 'mobile' => request()->get('mobile') ?? null,
                 'home' => request()->get('home') ?? null,
-                'id_photo' => request()->get('id_photo'),
+                'id_photo' => $id_photo,
                 'interests' => request()->get('interests') ?? null,
-                //'email' => request()->get('email'),
             ]);
             if ($update) {
                 return response()->json(['message' => 'User was updated successfully!'], 200);
