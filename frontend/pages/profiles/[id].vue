@@ -243,7 +243,7 @@ input[type="text"]:focus {
 
                     <div class="my-label2">Email</div>
                     <a :href="`mailto:${profile?.email}`" class="my-email">{{ profile?.email }}</a>
-                    <div style="font-size:14px; color:#666666;">change password</div>
+                    <div style="font-size:14px; color:#666666;">change email</div>
                 </div>
             </div>
             <div style="flex:1; padding:25px 15px; border:1px solid #DBDCDD;">
