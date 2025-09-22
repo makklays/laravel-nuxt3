@@ -85,6 +85,8 @@ input[type="text"]:focus {
     color: #13275F;
     margin-right: 10px;
 }
+.my-auth-data-text { font-size:14px; color:#666666; }
+.block-auth-messages { padding:25px 15px; border:1px solid #DBDCDD; }
 </style>
 
 <template>
@@ -233,20 +235,20 @@ input[type="text"]:focus {
             </div>
         </div>
 
-        <div class="d-flex p-0" style="gap:25px; margin:0;">
-            <div style="flex:0 0 16.666%; padding:25px 15px; border:1px solid #DBDCDD;">
+        <div class="d-flex p-0" style="gap:25px; margin:0;" >
+            <div class="block-auth-messages" style="flex:0 0 16.666%;">
                 <div>
                     <div class="my-title">Auth data</div>
 
                     <div class="my-label2">Password</div>
-                    <div style="font-size:14px; color:#666666;" >change password</div>
+                    <div class="my-auth-data-text" >change password</div>
 
                     <div class="my-label2">Email</div>
                     <a :href="`mailto:${profile?.email}`" class="my-email">{{ profile?.email }}</a>
-                    <div style="font-size:14px; color:#666666;">change email</div>
+                    <div class="my-auth-data-text" >change email</div>
                 </div>
             </div>
-            <div style="flex:1; padding:25px 15px; border:1px solid #DBDCDD;">
+            <div class="block-auth-messages" style="flex:1;" >
                 <div>
                     <div class="my-title">Messages</div>
                 </div>
