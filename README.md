@@ -1,6 +1,6 @@
 # Laravel + Nuxt 3
 
-This is a <b>Laravel + Nuxt 3</b> project with sample code to demonstrate my knowledge and technical skills (for SMART BUNDLES).
+This is a <b>Laravel + Nuxt 3</b> project with sample code to demonstrate my knowledge and technical skills.
 
 ### Frontend (Nuxt 3)
 
